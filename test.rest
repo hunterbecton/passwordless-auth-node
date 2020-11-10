@@ -1,0 +1,72 @@
+@host = http://localhost:4010/api/v1
+
+# @name login
+POST {{host}}/users/authLogin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hunter@skillthrive.com"
+}
+
+###
+
+@verifyToken = 59c08b42edb0fccded38efd5eec152457e39415e784a69c72d3515a2dcfe921b
+
+# @name verify
+POST {{host}}/users/authVerify/{{verifyToken}} HTTP/1.1
+
+###
+
+# @name isLoggedIn
+GET {{host}}/users/isLoggedIn HTTP/1.1
+
+###
+
+# @name logout
+POST {{host}}/users/logout HTTP/1.1
+
+###
+
+# @name getMe
+GET {{host}}/users/me HTTP/1.1
+
+###
+
+# @name updateMe
+PATCH {{host}}/users/updateMe HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hello@skillthrive.com"
+}
+
+###
+
+# @name deleteMe
+DELETE {{host}}/users/deleteMe HTTP/1.1
+
+###
+
+@userId = 5fa95c8110a3b9a376a27415
+
+# @name getUser
+GET {{host}}/users/{{userId}} HTTP/1.1
+
+###
+
+# @name updateUser
+PATCH {{host}}/users/{{userId}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hunter@skillthrive.com"
+}
+
+###
+
+# @name deleteUser
+DELETE {{host}}/users/{{userId}} HTTP/1.1
+
+
+
+
