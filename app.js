@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const compression = require('compression');
 
 const userRouter = require('./routes/userRoutes');
+const AppError = require('./utils/appError');
 
 const app = express();
 
